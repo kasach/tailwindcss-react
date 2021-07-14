@@ -7,6 +7,7 @@ import Home from "./pages";
 import About from "./pages/about";
 import Menu from "./pages/menu";
 import Contact from "./pages/contact";
+import Login from "./pages/login/login";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,15 +32,18 @@ function App() {
 
   return (
     <>
-      <Navbar toggle={toggle} />
-      <Dropdown isOpen={isOpen} toggle={toggle} />
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/menu" exact component={Menu} />
-        <Route path="/about" exact component={About} />
-        <Route path="/contact" exact component={Contact} />
+        <Route exact path="/login" component={Login} />
+        <div>
+          <Navbar toggle={toggle} />
+          <Dropdown isOpen={isOpen} toggle={toggle} />
+          <Route path="/" exact component={Home} />
+          <Route path="/menu" exact component={Menu} />
+          <Route path="/about" exact component={About} />
+          <Route path="/contact" exact component={Contact} />
+          <Footer />
+        </div>
       </Switch>
-      <Footer />
     </>
   );
 }

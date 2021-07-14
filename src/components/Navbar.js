@@ -39,6 +39,12 @@ const Navbar = ({toggle}) => {
         <Link className="p-4" to="/contact">
           Contact
         </Link>
+        <Link className="p-4" to="/login">
+          Login
+        </Link>
+        <Link className="p-4" to="/register">
+          Register
+        </Link>
       </div>
     </nav>
   );
